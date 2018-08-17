@@ -11,6 +11,7 @@
       a.contact { color: #000; }
       .partners { margin-top: 25px; }
       .partners img { width: 200px;}
+      #map { margin-top: 30px; width: 100%; height: 33vh; min-height: 300px; }
     </style>
   </head>
   <body>
@@ -19,14 +20,29 @@
         <div>
           <img src="/assets/ethos.png" alt="Ethos" class="logo" />
         </div>
-        <a href="mailto:hello@ethos.tech" class="contact">hello@ethos.tech</a>
         <div class="partners">
           <a href="https://cloud.withgoogle.com/partners/detail/?id=CIGAgICAgICr8gE%3D&language=en">
             <img src="/assets/GCP_badge.png" alt="Google Cloud Partner" />
           </a>
         </div>
+
+        <h3>Let's work together:</h3>
+        <a href="mailto:hello@ethos.tech" class="contact">hello@ethos.tech</a>
+
+        <div id="map"></div>
+        <script>
+          function initMap() {
+            var marker = {lat: 24.7420553, lng: 46.6481446};
+            var map = new google.maps.Map(
+              document.getElementById('map'),
+              {zoom: 17, center: marker}
+            );
+            var marker = new google.maps.Marker({position: marker, map: map});
+          }
+        </script>
       </div>
     </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsc6qH7fE4uYO7paiIE_SeAUNGOeItGpE&callback=initMap"></script>
     <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-122149952-3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
