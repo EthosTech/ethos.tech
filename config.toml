@@ -1,0 +1,4 @@
+baseURL = "https://ethos.tech/"
+languageCode = "en-us"
+title = "Ethos Technologies"
+theme = "ethos"

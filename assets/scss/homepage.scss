@@ -1,0 +1,143 @@
+.intro-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 30px);
+  margin-bottom: 30px;
+  background-image: url('/images/home-bg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: $white;
+
+  .navbar {
+    width: 100%;
+    padding: 40px;
+
+    .logo {
+      width: 300px;
+      max-width: 90vw;
+    }
+  }
+
+  .slogan {
+    font-family: 'Francois One', sans-serif;
+    font-size: 2em;
+  }
+}
+
+$intro-button-dimension: 50px;
+
+.intro-down-button {
+  width: $intro-button-dimension;
+  height: $intro-button-dimension;
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  margin-left: $intro-button-dimension/2*-1;
+  background: $white;
+  box-shadow: 0 2px 10px $gray-400;
+  border-radius: 50%;
+  z-index: 999;
+
+  .button {
+    width: $intro-button-dimension;
+    height: $intro-button-dimension;
+  }
+}
+
+.section {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .header {
+    font-size: 1.8em;
+    font-family: 'Francois One', sans-serif;
+    margin-bottom: 50px;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 70%;
+      margin: 0 auto;
+      padding-top: 10px;
+      border-bottom: 2px solid $primary;
+    }
+  }
+}
+
+.services {
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+
+    @media (max-width: 414px) {
+      flex-direction: column;
+    }
+    @media (min-width: 415px) {
+      max-width: 80vw;
+    }
+
+    .service {
+      margin: 10px 30px;
+      flex-basis: 0;
+      flex-grow: 1;
+      text-align: center;
+
+      .icon {
+        width: 100px;
+        max-height: 100px;
+      }
+
+      .title {
+        font-size: 1.5em;
+        margin-top: 30px;
+      }
+
+      .description {
+        text-align: justify;
+      }
+    }
+  }
+}
+
+.clients {
+  background: #eee;
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    .client {
+      margin: 0 10px;
+
+      img {
+        max-height: 150px;
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+.partnerships {
+  .container {
+    display: flex;
+    align-items: center;
+
+    .partnership {
+      margin: 0 10px;
+
+      img {
+        max-height: 150px;
+        max-width: 200px;
+      }
+    }
+  }
+}

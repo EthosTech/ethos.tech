@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{- block "title" . -}}{{ .Site.Title }}{{- end -}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end -}}
+{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end -}}
+{{ with .Site.LanguageCode }}<meta http-equiv="content-language" content="{{ . }}" />{{ end -}}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ .Site.BaseURL }}images/{{ .Site.Params.sidebar.avatar }}">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Site.Title }} - {{ .Title }}{{ end }}" />
+<meta name="twitter:url" content="{{ .Permalink }}" />
+<meta name="twitter:image" content="{{ .Site.BaseURL }}images/{{ .Site.Params.sidebar.avatar }}" />
+<meta name="twitter:card" content="" />
+<link rel="canonical" href="{{ .Permalink }}"/>
+<link rel="shortcut icon" href="favicon.ico">
+{{ if eq .Site.Language.Lang "en" -}}
+<link href="https://fonts.googleapis.com/css?family=Francois+One|Lato" rel="stylesheet">
+{{- else -}}
+<link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+{{- end }}
+{{ $styles := resources.Get "scss/main.scss" | toCSS | postCSS | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
